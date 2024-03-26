@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Latex from '../components/Latex.astro';
+import FormulaCard from '../components/FormulaCard.astro';
+import InfoCard from '../components/InfoCard.astro';
+import Chapter1 from '../components/Chapter/Chapter1.astro'
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Formelsamling</h1>
+		<h2>1 Følger og rekker</h2>
+		<h3>Definisjon tallfølge</h3>
+		<Chapter1></Chapter1>
+	</main>
+</Layout>
+
+<style is:global>
+	main {
+		max-width: 816px;
+		margin: 0 auto;
+	}
+
+	.card > p {
+		margin-top: 0;
+	}
+
+	.two-col {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+</style>

@@ -1,0 +1,118 @@
+---
+interface Props {
+  title: string;
+  id: string;
+}
+
+const {title = "Bevis for ...", id= " Eksempel 1"} = Astro.props
+
+
+---
+
+<div class="card" id={ id }>
+  <div class="title">
+    <p>{ title }</p>
+  </div>
+  <div class="main">
+    <slot name="main" class="main" />
+  </div>
+  <div class="accordion">
+    <input type="checkbox" id={id + "-accordion"} class="input">
+    <label for={id + "-accordion"} class="label">Forklaring</label>
+    <div class="content" id={"explanation-for-" + id}>
+      <slot name="explanation" />
+      <!-- <label for={id + "accordion"} class="hide">Vis mindre</label> -->
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: var(--blue-100);
+    border-radius: 3rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1em;
+  }
+
+  .title {
+    height: 4rem;
+    width: fit-content;
+    max-width: calc(100% - 6rem);
+    border-bottom-right-radius: 3rem;
+    background-color: var(--blue-200);
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .title p {
+    font-size: 1.75rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .main {
+    margin: 1rem 3rem;
+    font-size: 1.25rem;
+  }
+
+  .accordion {
+    background-color: var(--blue-50);
+    margin-inline: 1rem;
+    border-radius: 2rem;
+  }
+
+  .input {
+    position: absolute;
+    clip: rect(1px,1px,1px,1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 4rem;
+    font-size: 1.25rem;
+    border-radius: 2rem;
+    padding-left: 2rem;
+    padding-right: 0.5rem;
+    font-weight: bold;
+  }
+
+  .label::after {
+    display: block;
+    content: '\276F';
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--blue-200);
+    transform: rotate(90deg);
+  }
+
+  .content {
+    display: none;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+  }
+
+  .input:checked ~ .label {
+    outline: 2px solid var(--blue-200);
+    outline-offset: -1px;
+  }
+
+  .input:checked ~ .label::after {
+    transform: rotate(-90deg);
+  }
+
+  .input:checked ~ .content {
+    display: block;
+  }
+</style>
