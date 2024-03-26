@@ -1,23 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Latex from '../components/Latex.astro';
-import FormulaCard from '../components/FormulaCard.astro';
-import InfoCard from '../components/InfoCard.astro';
 import Chapter1 from '../components/Chapter/Chapter1.astro'
+import Chapter2 from '../components/Chapter/Chapter2.astro';
+import Chapter3 from '../components/Chapter/Chapter3.astro';
+import Chapter4 from '../components/Chapter/Chapter4.astro';
+import Chapter5 from '../components/Chapter/Chapter5.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="R2 kompendium">
 	<main>
-		<h1>Formelsamling</h1>
-		<h2>1 Følger og rekker</h2>
-		<h3>Definisjon tallfølge</h3>
+		<h1>Formelsamling R2</h1>
+		<p>Hopp rett til kapittel</p>
+		<ul>
+			<li><a href="#kap-1">1</a></li>
+			<li><a href="#kap-2">2</a></li>
+			<li><a href="#kap-3">3</a></li>
+			<li><a href="#kap-4">4</a></li>
+			<li><a href="#kap-5">5</a></li>
+		</ul>
 		<Chapter1></Chapter1>
+		<Chapter2></Chapter2>
+		<Chapter3></Chapter3>
+		<Chapter4></Chapter4>
+		<Chapter5></Chapter5>
 	</main>
 </Layout>
 
 <style is:global>
 	main {
-		max-width: 816px;
+		--side-padding: 1rem;
+		max-width: calc(816px + var(--side-padding) * 2);
+		padding-inline: var(--side-padding);
 		margin: 0 auto;
 	}
 

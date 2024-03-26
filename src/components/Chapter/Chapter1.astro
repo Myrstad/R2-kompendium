@@ -5,192 +5,193 @@ import FormulaCard from "../FormulaCard.astro"
 ---
 
 <section id="kap-1">
-		<h3>Definisjon tallfølge</h3>
-		<InfoCard>
-			<p>
-				En (tall)følge er en oppramsning av tall.<br><br>
-				Hvis oppramsningen innholder n tall, der <Latex formula='n\\in\\mathbb{N}' inline={true}/>
-				er følgen endelig. Ellers er den uendelig.
-			</p>
-		</InfoCard>
-		<h3>Forskjellige typer følger.</h3>
-		<InfoCard>
-			Vanligvis navngis følger på denne måten 
-			<Latex formula='\\lbrace a_n\\rbrace' inline={true}/>
-			<br>
-			<br>
-			<b>Rekursive følger</b> <Latex formula='\\lbrace r_n\\rbrace' inline={true} /> er definert ved blant annet<br>
-			<Latex formula='r_{n+2}=r_{n+1}+r_n' inline={true} /><br>
-			Kjent eksempel er fibbonacci følgen som bruker formelen over med start tallene 0 og 1
-			<br>
-			<br>
-			<b>Ekplisitte rekker</b>, eksempel for <Latex formula='\\lbrace e_n\\rbrace' inline={true}/><br>
-			<Latex formula='r_n=2n' inline={true}/><br>
-			Kjennetegnes ved at den er uavhengig av forrige tall i følgen
-		</InfoCard>
+  <h2>1 Følger og rekker</h2>
+  <h3>Definisjon tallfølge</h3>
+  <InfoCard>
+    <p>
+      En (tall)følge er en oppramsning av tall.<br><br>
+      Hvis oppramsningen innholder n tall, der <Latex formula='n\\in\\mathbb{N}' inline={true}/>
+      er følgen endelig. Ellers er den uendelig.
+    </p>
+  </InfoCard>
+  <h3>Forskjellige typer følger.</h3>
+  <InfoCard>
+    Vanligvis navngis følger på denne måten 
+    <Latex formula='\\lbrace a_n\\rbrace' inline={true}/>
+    <br>
+    <br>
+    <b>Rekursive følger</b> <Latex formula='\\lbrace r_n\\rbrace' inline={true} /> er definert ved blant annet<br>
+    <Latex formula='r_{n+2}=r_{n+1}+r_n' inline={true} /><br>
+    Kjent eksempel er fibbonacci følgen som bruker formelen over med start tallene 0 og 1
+    <br>
+    <br>
+    <b>Ekplisitte rekker</b>, eksempel for <Latex formula='\\lbrace e_n\\rbrace' inline={true}/><br>
+    <Latex formula='e_n=2n' inline={true}/><br>
+    Kjennetegnes ved at den er uavhengig av forrige tall i følgen
+  </InfoCard>
 
-		<h3>Definisjon rekke</h3>
-		<InfoCard>
-			<p>
-				<b>En rekke er summen av en følge.</b> Eksempel:
-				<Latex formula='a_n=3^{n-1}' />
-				For de fire første tallene i følgen har vi
-				<Latex formula='a_1=3^0=1' />
-				<Latex formula='a_2=3^1=3' />
-				<Latex formula='a_3=3^2=9' />
-				<Latex formula='a_4=3^3=27' />
-				Summen av de fire første tallene danner rekka
-				<Latex formula='s_4=1+3+9+27=40' />
-			</p>
-		</InfoCard>
-		
-		<h3></h3>
-		<FormulaCard title='Summen av de n første leddene' id='sum-av-n-forste-ledd'>
-			<div slot="main">
-				<p>Summen av de n første leddene i en rekke kan vi skrive slik:</p>
-				<Latex formula='s_n=a_1+a_2+a_3+\\dots+a_n=\\sum_{i=1}^{n}a_i' />
-			</div>
-			<div slot="explanation">
-				<p>s<sub>n</sub> betyr summen av de n første tallene</p>
-				<p>Som er summen av alle tallene i rekken (her mellom = og =)</p>
-				<p>Som også kan skrives med summasjonstegnet <Latex formula='\\sum' inline={true}/></p> 
-			</div>
-		</FormulaCard>
+  <h3>Definisjon rekke</h3>
+  <InfoCard>
+    <p>
+      <b>En rekke er summen av en følge.</b> Eksempel:
+      <Latex formula='a_n=3^{n-1}' />
+      For de fire første tallene i følgen har vi
+      <Latex formula='a_1=3^0=1' />
+      <Latex formula='a_2=3^1=3' />
+      <Latex formula='a_3=3^2=9' />
+      <Latex formula='a_4=3^3=27' />
+      Summen av de fire første tallene danner rekka
+      <Latex formula='s_4=1+3+9+27=40' />
+    </p>
+  </InfoCard>
+  
+  <h3></h3>
+  <FormulaCard title='Summen av de n første leddene' id='sum-av-n-forste-ledd'>
+    <div slot="main">
+      <p>Summen av de n første leddene i en rekke kan vi skrive slik:</p>
+      <Latex formula='s_n=a_1+a_2+a_3+\\dots+a_n=\\sum_{i=1}^{n}a_i' />
+    </div>
+    <div slot="explanation">
+      <p>s<sub>n</sub> betyr summen av de n første tallene</p>
+      <p>Som er summen av alle tallene i rekken (her mellom = og =)</p>
+      <p>Som også kan skrives med summasjonstegnet <Latex formula='\\sum' inline={true}/></p> 
+    </div>
+  </FormulaCard>
 
-		<h3>Aritmetisk rekke</h3>
-		<InfoCard>
-			d er distansen mellom tallene
-			<Latex formula='a_{n+1}=a_n+d\\iff a_n = a_1 + (n-1)d' />
-		</InfoCard>
+  <h3>Aritmetisk rekke</h3>
+  <InfoCard>
+    d er distansen mellom tallene
+    <Latex formula='a_{n+1}=a_n+d\\iff a_n = a_1 + (n-1)d' />
+  </InfoCard>
 
-		<h3>Summen av endelig aritmetisk rekke</h3>
-		<FormulaCard title='Summen av en endelig aritmetisk rekke' id='sum-aritmetisk'>
-			<div slot="main">
-				<Latex formula='s_n=\\frac{a_1+a_n}{2}\\cdot n' />
-			</div>
-			<div slot="explanation">
-				Regn ut rekken <Latex formula='1+2+3+4+5+6+\\dots+100' inline={true} /> <br>
-				Klart dette er ikke gjort på 1-2-3, så vi må finne en smartere løsning. <br>
-				Vi starter med summen av tallene fra 1 til 10... Finner vi en sammenheng?
-				<br>
-				<br>
-				Vel det er mange måter å tenke seg til en slags gruppering som en forklaring av formelen.
-				<br>
-				<Latex formula='(1+10) + (2+9) + (3+8) + (4+7) + (5+6)' inline={true} /> <br>
-				<Latex formula='11+11+11+11+11' inline={true} /> <br>
-				<Latex formula='(1+10)\\cdot 10 / 2=55' inline={true} />
-				<br>
-			</div>
-		</FormulaCard>
+  <h3>Summen av endelig aritmetisk rekke</h3>
+  <FormulaCard title='Summen av en endelig aritmetisk rekke' id='sum-aritmetisk'>
+    <div slot="main">
+      <Latex formula='s_n=\\frac{a_1+a_n}{2}\\cdot n' />
+    </div>
+    <div slot="explanation">
+      Regn ut rekken <Latex formula='1+2+3+4+5+6+\\dots+100' inline={true} /> <br>
+      Klart dette er ikke gjort på 1-2-3, så vi må finne en smartere løsning. <br>
+      Vi starter med summen av tallene fra 1 til 10... Finner vi en sammenheng?
+      <br>
+      <br>
+      Vel det er mange måter å tenke seg til en slags gruppering som en forklaring av formelen.
+      <br>
+      <Latex formula='(1+10) + (2+9) + (3+8) + (4+7) + (5+6)' inline={true} /> <br>
+      <Latex formula='11+11+11+11+11' inline={true} /> <br>
+      <Latex formula='(1+10)\\cdot 10 / 2=55' inline={true} />
+      <br>
+    </div>
+  </FormulaCard>
 
-		<h3>Geometrisk rekke</h3>
-		<InfoCard>
-			k er koeffisienten mellom tallene
-			<Latex formula='a_{n+1}=a_n\\cdot k\\iff a_n = a_1\\cdot k^{n-1}' />
-		</InfoCard>
-		
-		<h3>Summen av n første i en geometrisk rekke</h3>
-		<InfoCard>
-			<Latex formula='s_n=a_1\\cdot\\frac{k^n-1}{k-1} \\quad \\text{for}\\quad k\\ne1' />
-		</InfoCard>
+  <h3>Geometrisk rekke</h3>
+  <InfoCard>
+    k er koeffisienten mellom tallene
+    <Latex formula='a_{n+1}=a_n\\cdot k\\iff a_n = a_1\\cdot k^{n-1}' />
+  </InfoCard>
+  
+  <h3>Summen av n første i en geometrisk rekke</h3>
+  <InfoCard>
+    <Latex formula='s_n=a_1\\cdot\\frac{k^n-1}{k-1} \\quad \\text{for}\\quad k\\ne1' />
+  </InfoCard>
 
-		<h3>Kovergerende rekke</h3>
-		<FormulaCard title='Sum av kovergent rekke' id='sum-konvergerende'>
-			<div slot="main">
-				En geometrisk rekker konvergerer dersom:
-				<Latex formula='-1<k<1' />
-				I en konvergent rekke er summen definert:
-				<Latex formula='s=\\frac{a_1}{1-k}' />
-			</div>
-			<div slot="explanation">
-				Summen av en uendelig rekke (som konvergerer) kan skrives som
-				<Latex formula='s=\\lim_{n \\to \\infty}s_n' />
-				Benytter summen av geometrisk rekke, og at rekken er geometrisk til å finne
-				<Latex formula='s=\\lim_{n \\to \\infty}a_1\\cdot\\frac{\\cancel{k^n}-1}{k-1}\\quad \\text{der} \\quad -1<k<1' />
-				<Latex formula='s=\\frac{-a_1}{k-1}' />
-				<Latex formula='s=\\frac{a_1}{1-k}' />
-			</div>
-		</FormulaCard>
-		
-		<h3>Variable kvotienter og konvergensområde (s.62)</h3>
-		<InfoCard>
-			En geometrisk rekke konvergerer dersom <Latex formula='-1<k(x)<1' inline={true} />
-		</InfoCard>
-		<FormulaCard title='Eksempel på konvergensområde' id='eksempek-konvergensområde' >
-			<div slot="main">
-				Finn konvergensområde til
-				<Latex formula='s(x)=3+3(2x-1)+3(2x-1)^2+3(2x-1)^3+\\dots' />
-			</div>
-			<div slot="explanation">
-				Først finner vi at <Latex inline={true} formula='k(x)=2x-1' />, må derfor løse <Latex inline={true} formula='-1<k(x)<1' />
-				<Latex formula='-1 < 2x-1 < 1' />
-				<Latex formula='-1+1 < 2x-1+1 < 1+1' />
-				<Latex formula='0 < 2x < 2' />
-				<Latex formula='0 < x < 1' />
-				<Latex formula='x\\in\\langle 0, 1\\rangle' />
-			</div>
-		</FormulaCard>
-		
-		<h3>Induksjonsbevis</h3>
-		<InfoCard>
-			Det er en naturlig tanke å tenke at hvis noe er sant for en ting, og den neste, og den neste, og den neste, ... så må utsagnet være sant for alle de neste tallene.
-			Dette er det bærende beviset for induksjonsbevis. Konkret må de bevise dette:
-			<ol>
-				<li>Utsagnet er sant for n=1</li>
-				<li><i>Hvis</i> utsagnet er sant for et vilkåerlig naturlig tall, så er det også sant for det neste naturlige tallet</li>
-			</ol>
-		</InfoCard>
-		<FormulaCard title='Eksempel på induksjonsbevis' id='induksjonsbevis' >
-			<div slot="main">
-				Bevis med induksjon at
-				<Latex formula='1+2+3+\\dots+n=\\frac{n(n+1)}{2}' />
-			</div>
-			<div slot="explanation">
-				Først sjekker vi om dette stemmer for første mulige tilfelle, n=1
-				<Latex formula='1=\\frac{1(1+1)}{2}\\quad\\text{som er sant}' />
-				Vi vet derfor at det stemmer for n=1 (første steget)
-				<br><br><br>
-				Så må vi bevise at formelen stemmer for et vilkåerlig tall n=k
-				<Latex formula='1+2+3+\\dots+k=\\frac{k(k+1)}{2}' />
-				samt n=k+1 som vil gi formelen
-				<Latex formula='1+2+3+\\dots+k+(k+1)=\\frac{(k+1)((k+1)+1)}{2}' />
-				Bruker derfor antagelsen <Latex formula='1+2+3+\\dots+k=\\frac{k(k+1)}{2}' inline={true} />
-				<Latex formula='\\textcolor{blue}{\\frac{k(k+1)}{2}}+(k+1)=\\textcolor{blue}{1+2+3+\\dots+k}+(k+1)' />
-				<Latex formula='=\\frac{k(k+1)}{2}+(k+1)' />
-				<Latex formula='=\\frac{k(k+1)}{2}+\\frac{2(k+1)}{2}' />
-				<Latex formula='=\\frac{k\\textcolor{red}{(k+1)}+2\\textcolor{red}{(k+1)}}{2}' />
-				<Latex formula='=\\frac{\\textcolor{red}{(k+1)}(k+2)}{2}' />
-				<Latex formula='=\\frac{(k+1)((k+1)+1)}{2}' />
-				Vi ser at formelen vi sitter igjen med etter et at vi bestemte n=k+1 og formelen vi fikk med antagelsen + (k+1) er den samme. Derfor har vi bevist steg 2 fordi utsagnet er sant for et tilfelig naturlig tall og det neste naturlige tallet etter det igjen. Derfor stemmer utsagnet for ALLE naturlige tall.
-			</div>
-		</FormulaCard>
-		<InfoCard>
-			<b>Induksjonsbevis</b><br>
-			Vi kan korte ned formuleringen av beviset. Vi ønsker å bevise at utsag P(n) er sant for alle naturlige tall.
-			<ol>
-				<li>Vis at P(1) er sant</li>
-				<li>Vis at hvis P(k) er sant for et naturlig tall k, er også P(k+1) sannt.</li>
-			</ol>
-			Da sier induksjonsbeviset at utsagnet P(n) er sant for alle naturlige tall n.
-		</InfoCard>
-		
-		<h3>Slutt- og nåverdier</h3>
-		<div class="two-col">
-			<InfoCard>
-				<b>Sluttverdi</b><br>
-				Anta 1000kr på en konto me rente på 2% stå urørt i fem år: <br>
-				1000kr ⋅ 1,02<sup>5</sup> = 1104,08kr <br>
-				Altså er sluttverdien på 1000 kr etter 5 år 1104 kr. 
-			</InfoCard>
-			<InfoCard>
-				<b>Nåverdi</b><br>
-				Vi tar for oss samme eksmepel, bare vi ønsker å sette pengene på konto <i>om</i> 5 år. <br>
-				x kroner som vil blir 1000kr om 5 år finner vi med likningen. x ⋅ 1,02<sup>5</sup> = 1000 <br>
-				Den gir x = 905,73 <br>
-				Altså er 906 kr nåverdien til 1000 kr om fem års tid.
-			</InfoCard>
-		</div>
+  <h3>Kovergerende rekke</h3>
+  <FormulaCard title='Sum av kovergent rekke' id='sum-konvergerende'>
+    <div slot="main">
+      En geometrisk rekker konvergerer dersom:
+      <Latex formula='-1<k<1' />
+      I en konvergent rekke er summen definert:
+      <Latex formula='s=\\frac{a_1}{1-k}' />
+    </div>
+    <div slot="explanation">
+      Summen av en uendelig rekke (som konvergerer) kan skrives som
+      <Latex formula='s=\\lim_{n \\to \\infty}s_n' />
+      Benytter summen av geometrisk rekke, og at rekken er geometrisk til å finne
+      <Latex formula='s=\\lim_{n \\to \\infty}a_1\\cdot\\frac{\\cancel{k^n}-1}{k-1}\\quad \\text{der} \\quad -1<k<1' />
+      <Latex formula='s=\\frac{-a_1}{k-1}' />
+      <Latex formula='s=\\frac{a_1}{1-k}' />
+    </div>
+  </FormulaCard>
+  
+  <h3>Variable kvotienter og konvergensområde (s.62)</h3>
+  <InfoCard>
+    En geometrisk rekke konvergerer dersom <Latex formula='-1<k(x)<1' inline={true} />
+  </InfoCard>
+  <FormulaCard title='Eksempel på konvergensområde' id='eksempek-konvergensområde' >
+    <div slot="main">
+      Finn konvergensområde til
+      <Latex formula='s(x)=3+3(2x-1)+3(2x-1)^2+3(2x-1)^3+\\dots' />
+    </div>
+    <div slot="explanation">
+      Først finner vi at <Latex inline={true} formula='k(x)=2x-1' />, må derfor løse <Latex inline={true} formula='-1<k(x)<1' />
+      <Latex formula='-1 < 2x-1 < 1' />
+      <Latex formula='-1+1 < 2x-1+1 < 1+1' />
+      <Latex formula='0 < 2x < 2' />
+      <Latex formula='0 < x < 1' />
+      <Latex formula='x\\in\\langle 0, 1\\rangle' />
+    </div>
+  </FormulaCard>
+  
+  <h3>Induksjonsbevis</h3>
+  <InfoCard>
+    Det er en naturlig tanke å tenke at hvis noe er sant for en ting, og den neste, og den neste, og den neste, ... så må utsagnet være sant for alle de neste tallene.
+    Dette er det bærende beviset for induksjonsbevis. Konkret må de bevise dette:
+    <ol>
+      <li>Utsagnet er sant for n=1</li>
+      <li><i>Hvis</i> utsagnet er sant for et vilkåerlig naturlig tall, så er det også sant for det neste naturlige tallet</li>
+    </ol>
+  </InfoCard>
+  <FormulaCard title='Eksempel på induksjonsbevis' id='induksjonsbevis' >
+    <div slot="main">
+      Bevis med induksjon at
+      <Latex formula='1+2+3+\\dots+n=\\frac{n(n+1)}{2}' />
+    </div>
+    <div slot="explanation">
+      Først sjekker vi om dette stemmer for første mulige tilfelle, n=1
+      <Latex formula='1=\\frac{1(1+1)}{2}\\quad\\text{som er sant}' />
+      Vi vet derfor at det stemmer for n=1 (første steget)
+      <br><br><br>
+      Så må vi bevise at formelen stemmer for et vilkåerlig tall n=k
+      <Latex formula='1+2+3+\\dots+k=\\frac{k(k+1)}{2}' />
+      samt n=k+1 som vil gi formelen
+      <Latex formula='1+2+3+\\dots+k+(k+1)=\\frac{(k+1)((k+1)+1)}{2}' />
+      Bruker derfor antagelsen <Latex formula='1+2+3+\\dots+k=\\frac{k(k+1)}{2}' inline={true} />
+      <Latex formula='\\textcolor{blue}{\\frac{k(k+1)}{2}}+(k+1)=\\textcolor{blue}{1+2+3+\\dots+k}+(k+1)' />
+      <Latex formula='=\\frac{k(k+1)}{2}+(k+1)' />
+      <Latex formula='=\\frac{k(k+1)}{2}+\\frac{2(k+1)}{2}' />
+      <Latex formula='=\\frac{k\\textcolor{red}{(k+1)}+2\\textcolor{red}{(k+1)}}{2}' />
+      <Latex formula='=\\frac{\\textcolor{red}{(k+1)}(k+2)}{2}' />
+      <Latex formula='=\\frac{(k+1)((k+1)+1)}{2}' />
+      Vi ser at formelen vi sitter igjen med etter et at vi bestemte n=k+1 og formelen vi fikk med antagelsen + (k+1) er den samme. Derfor har vi bevist steg 2 fordi utsagnet er sant for et tilfelig naturlig tall og det neste naturlige tallet etter det igjen. Derfor stemmer utsagnet for ALLE naturlige tall.
+    </div>
+  </FormulaCard>
+  <InfoCard>
+    <b>Induksjonsbevis</b><br>
+    Vi kan korte ned formuleringen av beviset. Vi ønsker å bevise at utsag P(n) er sant for alle naturlige tall.
+    <ol>
+      <li>Vis at P(1) er sant</li>
+      <li>Vis at hvis P(k) er sant for et naturlig tall k, er også P(k+1) sannt.</li>
+    </ol>
+    Da sier induksjonsbeviset at utsagnet P(n) er sant for alle naturlige tall n.
+  </InfoCard>
+  
+  <h3>Slutt- og nåverdier</h3>
+  <div class="two-col">
+    <InfoCard>
+      <b>Sluttverdi</b><br>
+      Anta 1000kr på en konto me rente på 2% stå urørt i fem år: <br>
+      1000kr ⋅ 1,02<sup>5</sup> = 1104,08kr <br>
+      Altså er sluttverdien på 1000 kr etter 5 år 1104 kr. 
+    </InfoCard>
+    <InfoCard>
+      <b>Nåverdi</b><br>
+      Vi tar for oss samme eksmepel, bare vi ønsker å sette pengene på konto <i>om</i> 5 år. <br>
+      x kroner som vil blir 1000kr om 5 år finner vi med likningen. x ⋅ 1,02<sup>5</sup> = 1000 <br>
+      Den gir x = 905,73 <br>
+      Altså er 906 kr nåverdien til 1000 kr om fem års tid.
+    </InfoCard>
+  </div>
 
-		<h3>Annuitetslånseksempel (s.74)</h3>
-		
+  <h3>Annuitetslånseksempel (s.74)</h3>
+  
 </section>

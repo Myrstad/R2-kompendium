@@ -1,0 +1,47 @@
+---
+import InfoCard from "../InfoCard.astro"
+import Latex from "../Latex.astro"
+import FormulaCard from "../FormulaCard.astro" 
+---
+
+<section id="kap-2">
+  <h2>2 Integrasjon</h2>
+
+  <h3>Det bestemte integralet</h3>
+  <InfoCard>
+    <Latex formula="\\int_{a}^{b}f(x)\\;dx" />
+    Der a, b og f(x) er/gir reelle tall. <br>
+    Beskriver arealet av funksjonen hvis den kun er positiv fra a til b
+  </InfoCard>
+
+  <h3>Det bestemte integralet definert av riemannsummer</h3>
+  <InfoCard>
+    <Latex formula="\\int_{a}^{b}f(x)\\;dx=\\lim_{n\\to \\infin}\\sum_{i=1}^{n}(f(x_i^*))\\cdot\\Delta x\\text{, der }\\Delta x = \\frac{b-a}{n}" />
+  </InfoCard>
+  <h3>Rektangelmetoder</h3>
+  <InfoCard>
+    Rektangelmetode med venstretilnærming
+    <Latex formula="\\int_{a}^{b}f(x)\\;dx \\approx \\sum_{i=1}^{n}f(x_{i-1})\\cdot\\Delta x\\text\\enspace{der}\\enspace x_{i-1} = a+(i-1)\\cdot\\Delta x" />
+    Rektangelmetode med høyretilnærming
+    <Latex formula="\\int_{a}^{b}f(x)\\;dx \\approx \\sum_{i=1}^{n}f(x_i)\\cdot\\Delta x\\text\\enspace{der}\\enspace x_i = a+i\\cdot\\Delta x" />
+    Rektangelmetode med midtpunkttilnærming
+    <Latex formula="\\int_{a}^{b}f(x)\\;dx \\approx \\sum_{i=1}^{n}f(m_i)\\cdot\\Delta x\\text\\enspace{der}\\enspace m_i = a+\\bigg(i-\\frac{1}{2}\\bigg)\\cdot\\Delta x" />
+  </InfoCard>
+
+  <h3>Trapesmetoden</h3>
+  Ligner midtpunkttilnærming, bare du tar gjennomsnittet av venstre og høyre side per delta x.
+
+  <h3>Gjennomsnittsverdi av en funksjon i et intervall med bruk av et bestemt integral</h3>
+  <FormulaCard title="Gjennomsnittsverdi bestemt integral" id="gjennomsnitt-integral">
+    <div slot="main">
+        Gjennomsnittsverdien T av en funksjon f(x) i et intervall [a, b] er gitt ved
+        <Latex formula="\\bar T=\\frac{1}{b-a}\\int_{a}^{b}f(x)\\;dx" />
+    </div>
+    <div slot="explanation">
+      f(x) er høyden til figuren i et gitt punkt <br>
+      [a,b] beskriver lengden til figuren (langs x-aksen) <br>
+      Og fordi integralet beskriver areal, <br>
+      Så kan man dele på lengden (b-a) og sitte igjen med gjennomsnittshøyden.
+    </div>
+  </FormulaCard>
+</section>
