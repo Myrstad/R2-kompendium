@@ -52,8 +52,10 @@ const {title = "Bevis for ...", id= " Eksempel 1"} = Astro.props
   }
 
   .main {
-    margin: 1rem 3rem;
+    margin: 1rem;
+    padding-inline: 2rem;
     font-size: 1.25rem;
+    overflow-x: scroll;
   }
 
   .accordion {
@@ -99,8 +101,10 @@ const {title = "Bevis for ...", id= " Eksempel 1"} = Astro.props
 
   .content {
     display: none;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    margin-inline: 1rem;
     font-size: 1.25rem;
+    overflow-x: scroll;
   }
 
   .input:checked ~ .label {

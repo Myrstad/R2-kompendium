@@ -44,4 +44,93 @@ import FormulaCard from "../FormulaCard.astro"
       Så kan man dele på lengden (b-a) og sitte igjen med gjennomsnittshøyden.
     </div>
   </FormulaCard>
+
+  <h3>Buelengde til funksjon i intervall</h3>
+  <FormulaCard title="Buelengde" id="buelengde">
+    <div slot="main">
+      <Latex formula="s=\\int_{a}^{b}\\sqrt{1+(f'(x))^2}\\;dx" />
+    </div>
+    <div slot="explanation">
+      Ved å summere sammen alle hypotenusene til katetene (delta x) og forskjell i y får vi buelengde. <br>
+      For å finne formelen må vi starte med å finne en liten buelengde:
+      <Latex formula="\\Delta s_i=\\sqrt{(\\Delta x)^2+(\\Delta f(x_i))^2}" />
+      <Latex formula="\\Delta s_i=\\sqrt{\\Delta x^2\\bigg(1+\\Big(\\frac{\\Delta f(x_i)}{\\Delta x}\\Big)^2\\bigg)}" />
+      <Latex formula="\\Delta s_i=\\sqrt{1(f'(x))^2}\\cdot \\Delta x" />
+      Ved å summere sammen veldig mange små buelengder i et intervall, sitter vi igjen med formelen for buelengde!
+    </div>
+  </FormulaCard>
+
+  <h3>Det ubestemte integralet</h3>
+  <InfoCard>
+    K(x) står får den antideriverte, som også er det integrering er
+    <br>
+    <Latex formula="\\int f(x)\\;dx=K(x)+C" inline={true} />,
+    der
+    <Latex formula="K'(x)=f(x)" inline={true} />
+    og
+    <Latex formula="C\\in \\mathbb{R}" inline={true} />
+  </InfoCard>
+
+  <h3>Integrasjonregel: konstant faktor</h3>
+  <InfoCard>
+    En konstant faktor blir uendret ved integrasjon:
+    <Latex formula="\\int k\\cdot u(x)\\;dx=k\\int u(x)\\;dx\\qquad\\qquad(k\\in\\mathbb{R})" />
+  </InfoCard>
+
+  <h3>Integrasjonregel: flere utrykk</h3>
+  <InfoCard>
+    Flerleddet utrykk som integreres kan oppspaltes:
+    <Latex formula="\\int \\big(u(x)\\pm v(x)\\big)\\;dx=\\int u(x)\\;dx\\pm\\int v(x)\\;dx" />
+  </InfoCard>
+  <h3>Integrasjonregel: potenser</h3>
+  <InfoCard>
+    Generelt kan vi integrere potensen:
+    <Latex formula="\\int x^r\\;dx=\\frac{1}{r+1}x^{r+1}+C\\qquad\\qquad (r\\neq -1)" />
+  </InfoCard>
+  <h3>Integrasjonregel: <Latex formula="x^{-1}" inline={true} /> ved logaritme</h3>
+  <InfoCard>
+    <Latex formula="\\int \\frac{1}{x}\\;dx=\\ln|x|+C\\qquad\\qquad (x\\neq0)" />
+    <Latex formula="\\Updownarrow" />
+    <Latex formula="\\int \\frac{1}{ax+b}\\;dx=\\frac{1}{a}\\ln|ax+b|+C\\qquad\\qquad \\Big(x\\neq-\\frac{b}{a}\\Big)" />
+  </InfoCard>
+  <h3>Integrasjonregel: eksponensialfunksjoner</h3>
+  <InfoCard>
+    <Latex formula="\\int e^x\\;dx=e^x+C" />
+    <Latex formula="\\int e^{kx}\\;dx=\\frac{1}{k}e^{kx}+C\\qquad(k\\neq0)" />
+    <Latex formula="\\int a^x\\;dx=\\frac{a^x}{\\ln a}+C\\qquad(a>0,a\\neq1)" />
+  </InfoCard>
+
+  <h3>Bestemt integrasjon med antiderivasjon</h3>
+  <InfoCard>
+    La F være en antiderivert av f slik at F'(x)=f(x).
+    <Latex formula="\\int_{a}^{b}f(x)\\;dx=[F(x)]_a^b=F(b)-F(a)" />
+  </InfoCard>
+
+  <h3>Integrasjonsmetode: delvis integrasjon</h3>
+  <InfoCard>
+    <Latex formula="\\int u'\\cdot v\\;dx=u\\cdot v-\\int u\\cdot v'\\;dx" />
+    <Latex formula="\\int u\\cdot v'\\;dx=u\\cdot v-\\int u'\\cdot v\\;dx" />
+  </InfoCard>
+
+  <h3>Integrasjonsmetode: variabelskifte</h3>
+  <InfoCard>
+    <b>Metode for substitusjon</b><br>
+    <ol>
+      <li>Velg en kjerne u</li>
+      <li>Finn u'</li>
+      <li>Erstatt dx med <Latex formula="\\frac{du}{u'}" inline={true} /></li>
+      <li>Forenkle slikt at kun u består (er dette ikke mulig fungerer ikke metoden)</li>
+      <li>Integrer med u som variabel</li>
+      <li>Sett inn for u, slik at svaret blir en funksjon av x</li>
+    </ol>
+  </InfoCard>
+  
+  <h3>Integrasjonsmetode: delbrøkoppspalting</h3>
+  <InfoCard>
+    s.150
+  </InfoCard>
+  <FormulaCard title="Eksempel delbrøkoppspalting" id="delbrøkoppspalting">
+    <div slot="main"></div>
+    <div slot="explanation"></div>
+  </FormulaCard>
 </section>
