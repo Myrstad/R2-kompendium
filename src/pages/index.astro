@@ -8,15 +8,15 @@ import Chapter5 from '../components/Chapter/Chapter5.astro';
 ---
 
 <Layout title="R2 kompendium">
-	<main>
+	<main id="main">
 		<h1>Formelsamling R2</h1>
 		<p>Hopp rett til kapittel</p>
 		<ul>
-			<li><a href="#kap-1">1</a></li>
-			<li><a href="#kap-2">2</a></li>
-			<li><a href="#kap-3">3</a></li>
-			<li><a href="#kap-4">4</a></li>
-			<li><a href="#kap-5">5</a></li>
+			<li><a href="#kap-1">1 Følger og rekker</a></li>
+			<li><a href="#kap-2">2 Integrasjon</a></li>
+			<li><a href="#kap-3">3 Trigonometri</a></li>
+			<li><a href="#kap-4">4 Modeller</a></li>
+			<li><a href="#kap-5">5 Romgeometri</a></li>
 		</ul>
 		<Chapter1></Chapter1>
 		<Chapter2></Chapter2>
@@ -27,7 +27,7 @@ import Chapter5 from '../components/Chapter/Chapter5.astro';
 </Layout>
 
 <style is:global>
-	main {
+	#main {
 		--side-padding: 1rem;
 		max-width: calc(816px + var(--side-padding) * 2);
 		padding-inline: var(--side-padding);

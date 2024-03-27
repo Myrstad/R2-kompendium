@@ -192,6 +192,20 @@ import FormulaCard from "../FormulaCard.astro"
     </InfoCard>
   </div>
 
-  <h3>Annuitetslånseksempel (s.74)</h3>
+  <h3>Annuitetslånseksempel</h3>
+  <FormulaCard title="Annuitetslån" id="annuitetslaan">
+    <main slot="main">
+      Morten må låne 2 000 000 kr med en rente på 3% skal han nedbetale lånet på 20 år med like store nedbetalinger per år. Hvor stor er den årlige nedbetalingen?
+      <br>
+      Han bruker følgene formel:
+      <Latex formula="x\\cdot\\frac{1,03^{20}-1}{1,03-1}=2 000 000\\cdot1,03^{20}" />
+      Og finner at <u>x = 134 431,42 kr</u> med en kalkulator
+    </main>
+    <main slot="explanation">
+      H.S. beskriver nåverdien av lånet, altså hva 2 000 000 kr med 3% rente over 20 år er verdt i dagens valuta. <br>
+      V.S. bruker summen (s<sub>20</sub>) av en geometrisk rekke for å finne ut av hva x (a<sub>1</sub>) <br><br>
+      Grunnen for at disse er likestilte er at nåverdien må være lik summen av alle innbetalingene, for at lånet skal gå i 0.
+    </main>
+  </FormulaCard>
   
 </section>
