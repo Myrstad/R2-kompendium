@@ -175,7 +175,7 @@ import FormulaCard from "../FormulaCard.astro"
       <Latex formula="\\int\\Bigg(\\ \\frac{A}{3x+1}+\\frac{B}{3x-1} \\Bigg)\\;dx=\\int\\Bigg(\\ \\frac{-2}{3x+1}+\\frac{2}{3x-1} \\Bigg)\\;dx" />
       <Latex formula="=-\\frac{2}{3}\\ln|3x+1|+\\frac{2}{3}\\ln|3x-1|+C" />
       <Latex formula="= \\frac{2}{3}\\ln\\Bigg| \\frac{3x-1}{3x+1} \\Bigg|+C" />
-      Er du usikker på siste linje? Så snur man leddene, så ser man at logaritmesetningen om ln(a)-ln(b)=ln(a/b)
+      Er du usikker på siste linje? Så snur man leddene, så ser man at logaritmesetningen om ln(a)-ln(b)=ln(a/b) benyttes
     </div>
   </FormulaCard>
 
@@ -192,9 +192,13 @@ import FormulaCard from "../FormulaCard.astro"
     <Latex formula="A=2\\pi\\int_a^bf(x) \\sqrt{1+\\big(f'(x)\\big)^2} \\;dx" />
     <b>Merk:</b> at vi bruker buelengde for å finne arealet!
   </InfoCard>
-  <h3>omdreiningslegemer rundt y-aksen</h3>
+  <h3>Omdreiningslegemer rundt y-aksen</h3>
   <InfoCard>
-    s156 & s.165
+    <Latex formula="V=\\pi\\int_c^d\\big(g(y)\\big)^2\\;dy" />
+    <Latex formula="A=2\\pi\\int_c^dg(y) \\sqrt{1+\\big(g'(y)\\big)^2} \\;dy" />
+    Der g er den omvendte funksjonen til f, c=f(a) og d=f(b) <br>
+    Som betyr at man kan skrive følgene om en har f(x):
+    <Latex formula="V=\\pi\\int_{f(a)}^{f(b)}\\big(f^{-1}(x)\\big)^2\\;dx" />
   </InfoCard>
 
 </section>
