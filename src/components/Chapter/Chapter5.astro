@@ -6,4 +6,142 @@ import FormulaCard from "../FormulaCard.astro"
 
 <section id="kap-5">
   <h2>5 Romgeometri</h2>
+  <h3>3D versus 2D</h3>
+  <InfoCard>
+    Generelt kan 2D punkter skrives (x,y) og 3D punkter (x, y, z) <br> 
+    Det samme gjelder vektorer
+  </InfoCard>
+
+  <h3>Elementærvektor</h3>
+  <InfoCard>
+    Vi bruker elementærvektorene (3D)
+    <Latex formula="\\vec{e_x} = [1,0,0]" />
+    <Latex formula="\\vec{e_y} = [0,1,0]" />
+    <Latex formula="\\vec{e_z} = [0,0,1]" />
+    Til å beskrive 3D vektorer
+    <Latex formula="[x,y,z]=[x\\cdot\\vec{e_x}, y\\cdot\\vec{e_y}, z\\cdot\\vec{e_z}]" />
+  </InfoCard>
+
+  <h3>Vektorregler? (s.307)</h3>
+
+  <h3>Lengde på vektor (Pytagoras)</h3>
+  <InfoCard>
+    <Latex formula="\\vec{u}\\coloneqq[x,y,z]\\quad\\text{har lengden}\\quad|\\vec{u}|=\\sqrt{x^2+y^2+z^2}" />
+  </InfoCard>
+
+  <h3>Definere vektor ut ifra 2 punkt</h3>
+  <InfoCard>
+    <Latex formula="P(x_1,y_1,z_1)\\text{ og } Q(x_2,y_2,z_2)\\text { gir vektoren}" />
+    <Latex formula="\\overrightarrow{PQ}=[x_2-x_1,y_2-y_1,z_2-z_1]" />
+  </InfoCard>
+
+  <h3>Parallelle vektorer</h3>
+  <InfoCard>
+    <Latex formula="\\vec{u}||\\vec{v}\\iff\\vec{u}=k\\vec{v}\\qquad(k\\in\\R)" />
+    <Latex formula="\\vec{u}||\\vec{v}\\iff\\vec{u}\\times\\vec{v}=0\\qquad\\qquad\\medspace" />
+  </InfoCard>
+
+  <h3>Skalarproduktets definisjoner</h3>
+  <InfoCard>
+    <Latex formula="\\vec{u}\\coloneqq[x_1,y_1,z_1]\\text{ og }\\vec{v}\\coloneqq[x_2,y_2,z_2]" />
+    <Latex formula="\\vec{u}\\cdot\\vec{v}=x_1x_2+y_1y_2+z_1z_2" />
+    <Latex formula="\\vec{u}\\cdot\\vec{v}=|\\vec{u}|\\cdot|\\vec{v}|\\cdot\\cos\\theta" />
+    Der <Latex formula="\\theta\\in[0\\degree,180\\degree]\\lor\\theta\\in[0,\\pi]" inline={true} /> <br>
+    er vinkelen mellom <Latex formula="\\vec{u}" inline={true} /> og <Latex formula="\\vec{v}" inline={true} />
+  </InfoCard>
+
+  <h3>Vektor-regneregler? (s.316)</h3>
+
+  <h3>Ortogonale vekoterer</h3>
+  <InfoCard> 
+    <p>To vektorer er ortogonale dersom dersom de står vinkelrett på hverandre, med andre ord danner en vinkel på 90&deg; (er rettvinklet)</p>   
+    <Latex formula="\\vec{u}\\perp\\vec{v}\\iff\\vec{u}\\cdot\\vec{v}=0" />    
+  </InfoCard>
+
+  <h3>Vektorproduktet (kryssproduktet) [trenger krysningsskjemaet]</h3>
+  <InfoCard>
+    Vektorproduktet representerer en vektor som er ortogonal med begge vektorene den er definert med sine lengder som òg tilsvarer arealet til paralellogrammet vektorene utspenner
+    <Latex formula="\\vec{u}\\times\\vec{v}=[y_1z_2-z_1y_2,\\;z_1x_2-x_1z_2,\\;x_1y_2-y_1x_2]" />
+    <i>Tips sett opp skjema med x, y, z, x, y på toppen når du regner for hånd</i> <br>
+    <br>Formelt er vektorproduktet definert slikt:
+    <Latex formula="\\vec{u}\\times\\vec{v}=|\\vec{u}|\\cdot|\\vec{v}|\\sin(\\theta)\\;n" />
+    Hvor &theta; er vinkelen mellom u og v (0&deg; til 180&deg;) og n er en normalisert vektor som er ortogonal på både u og v
+    <br><br>
+    Her skjønner vi også hvorfor <Latex formula="\\vec{u}\\times\\vec{v}=0\\iff\\vec{u}\\perp\\vec{v}" inline={true} />
+    som selfølgelig er fordi når sinusverdiene sin(0&deg;) og sin(180&deg;) er 0
+  </InfoCard>
+  <FormulaCard title="Utlede vektorproduket" id="kryssprodukt">
+    <div slot="main" class="katex-left">
+      <Latex formula="\\vec{u}\\times\\vec{v}=[y_1z_2-z_1y_2,\\;z_1x_2-x_1z_2,\\;x_1y_2-y_1x_2]" />
+      <br>
+      <i>Også definert med den formelle determinanten</i>
+      <Latex formula="\\vec{c}=\\vec{u}\\times\\vec{v}" />
+      <Latex formula="\\vec{c}=\\det\\begin{pmatrix} e_x & e_y & e_z \\newline x_1 & y_1 & z_1 \\newline x_2 & y_2 & z_2 \\end{pmatrix}" />
+      <Latex formula="\\vec{c}=e_x\\cdot\\begin{vmatrix} y_1 & z_1 \\newline y_2 & z_2 \\end{vmatrix} - e_y\\cdot\\begin{vmatrix} x_1 & z_1 \\newline x_2 & z_2 \\end{vmatrix} + e_x\\cdot\\begin{vmatrix} x_1 & y_1 \\newline x_2 & y_2 \\end{vmatrix}" />
+      <Latex formula="\\vec{c}=e_x\\cdot|y_1z_2-z_1y_2| - e_y\\cdot|x_1z_2-z_1x_2| + e_x\\cdot|x_1y_2-y_1x_2|" />
+
+      
+    </div>
+    <div slot="explanation">
+      De to nederste linjene er gjenkjennbare i «Trond metoden» hvor man ganger oppe fra venstre til nede til høyre så subtraherer det som er oppe til høyre ganger nede til venstre.
+      <br>
+      <br>
+      En fordel med å ikke bruke determinanten er minusen på e<sub>y</sub> som følge av at den "mangler plass" eller må ta fra både venstre og høyre kolonne av seg selv.
+      <br>
+      <br>
+      Derfor anbefales det sterkt av meg personlig å sette opp skjemaet.
+    </div>
+  </FormulaCard>
+
+  <h3>Lagranges identitet...</h3>
+  <InfoCard>
+    Fordi ingen ønsker å se utredelsen til identiteten, skriver jeg den kun ned.
+    <Latex formula="|\\vec{u}\\times\\vec{u}|=|\\vec{u}|\\cdot|\\vec{u}|\\cdot\\sin\\theta" />
+    Men... derimot kan man se den ligner den formelle definisjonen ;)
+  </InfoCard>
+
+  <h3>Areal og volum med vektorprodukt</h3>
+  <InfoCard>
+    <p><b>Ulike areal 2D</b></p>
+    Parallellogram: <Latex formula="|\\vec{u}\\times\\vec{v}|" inline={true} /><br>
+    Trekant: <Latex formula="|\\vec{u}\\times\\vec{v}|" inline={true} /><br>
+    <p><b>Ulike areal 3D</b></p>
+    Parallellopiped: <Latex formula="|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
+    Trekantet prisme: <Latex formula="\\frac{1}{2}|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
+    Firkantet pyramide: <Latex formula="\\frac{1}{3}|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
+    Tetraeder: <Latex formula="\\frac{1}{3}|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
+  </InfoCard>
+
+  <h3>Parameterframstilling: rett linje</h3>
+  <InfoCard>
+    En rett linje &ell; som går gjennom P(x<sub>0</sub>,y<sub>0</sub>,z<sub>0</sub>) <br>
+    or har retningsvektoren [a,b,c] beskrives
+    <Latex formula="\\ell: \\begin{cases}x=x_0+at\\newline y=y_0+bt\\newline z=z_0+ct\\end{cases}" />
+    med en parameterframstilling
+  </InfoCard>
+
+  <FormulaCard title="Treffer to linjer?" id="linje-kollisjon">
+    <div slot="main">eksempel s.340</div>
+    <div slot="explanation">
+      Hmmmm
+    </div>
+  </FormulaCard>
+
+  <h3>Parameterframstilling: for kurver</h3>
+  <InfoCard>
+    <Latex formula="\\vec{r}(t)=\\Big[x(t),y(t),z(t)\\Big]" />
+  </InfoCard>
+  
+  <h3>Matte, men egentlig fysikk (akselerasjon)</h3>
+  <InfoCard>
+    La t være en parameter for tid, og r en posisjonsvektoren <br>
+    Så er sammenhengen mellom akselerasjon, fart og posisjon:
+    <Latex formula="\\vec{a}(t)=\\vec{v}'(t)=\\vec{r}''(t)" />
+  </InfoCard>
+
+  <h3>Definisjon plan</h3>
+  <InfoCard>
+    Et plan er en flate som ikke krummer i rommet. Og kan beskrives:
+    <Latex formula="ax+by+cz=d" />
+  </InfoCard>
 </section>
