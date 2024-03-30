@@ -104,12 +104,12 @@ import FormulaCard from "../FormulaCard.astro"
   <InfoCard>
     <p><b>Ulike areal 2D</b></p>
     Parallellogram: <Latex formula="|\\vec{u}\\times\\vec{v}|" inline={true} /><br>
-    Trekant: <Latex formula="|\\vec{u}\\times\\vec{v}|" inline={true} /><br>
+    Trekant: <Latex formula="\\frac{1}{2}|\\vec{u}\\times\\vec{v}|" inline={true} /><br>
     <p><b>Ulike areal 3D</b></p>
     Parallellopiped: <Latex formula="|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
     Trekantet prisme: <Latex formula="\\frac{1}{2}|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
     Firkantet pyramide: <Latex formula="\\frac{1}{3}|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
-    Tetraeder: <Latex formula="\\frac{1}{3}|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
+    Tetraeder: <Latex formula="\\frac{1}{6}|(\\vec{u}\\times\\vec{v})\\cdot\\vec{w}|" inline={true} /><br>
   </InfoCard>
 
   <h3>Parameterframstilling: rett linje</h3>
@@ -117,13 +117,50 @@ import FormulaCard from "../FormulaCard.astro"
     En rett linje &ell; som går gjennom P(x<sub>0</sub>,y<sub>0</sub>,z<sub>0</sub>) <br>
     or har retningsvektoren [a,b,c] beskrives
     <Latex formula="\\ell: \\begin{cases}x=x_0+at\\newline y=y_0+bt\\newline z=z_0+ct\\end{cases}" />
-    med en parameterframstilling
+    <br>
+    To linjer i rommet kan kun være:
+    <ul>
+      <li>være parallelle, men ikke sammenfallende</li>
+      <li>være parallelle og sammenfallende</li>
+      <li>være vindskeive (treffer aldri)</li>
+      <li>skjøre hverandre i ett punkt</li>
+    </ul>
   </InfoCard>
 
   <FormulaCard title="Treffer to linjer?" id="linje-kollisjon">
-    <div slot="main">eksempel s.340</div>
-    <div slot="explanation">
-      Hmmmm
+    <div slot="main">
+      Undersøk hvordan linjene ligger i forhold til hverandre
+      <Latex 
+        formula="\\ell:\\begin{cases}x=1+2t\\newline y=5+3t\\newline z=5+t\\end{cases}\\qquad m:\\begin{cases}x=-2t\\newline y=5-3t\\newline z=3-t\\end{cases}\\qquad n:\\begin{cases}x=1+t\\newline y=6+2t\\newline z=-2-3t\\end{cases}"
+      />
+      &ell; og m er parallelle men skjærer ikke hverandre <br>
+      &ell; og n skjærer hverandre i (-1,2,4) <br>
+      Finner vi at m og n er vindskjeive. <br>
+    </div>
+    <div slot="explanation" class="katex-left">
+      Vi starter med å finne retningsvektorene <Latex formula="\\vec{r_\\ell}=[2,3,1]" inline={true} />, <Latex formula="\\vec{r_m}=[-2,-3,-1]" inline={true} /> og <Latex formula="\\vec{r_n}=[1,2,-3]" inline={true} />
+      <br>
+      På grunn av <Latex formula="\\vec{r_\\ell}=-\\vec{r_m}" inline={true} /> er <Latex formula="\\vec{r_\\ell}\\|\\vec{r_m}" inline={true} />. Altså &ell; og m er parallelle
+      <br>
+      For å sjekke om linjene er sammenfallende sjekker vi om begge linjene har samme punkt. Vi starter men et kjent punkt på &ell; eksempel (1,5,5).
+      <br>
+      Vi sjekker om dette punktet også er på m ved å sette z lik hverandre: <br>
+      <Latex formula="m(-2)=(4,11,5)\\neq(1,5,5)" inline={true} /> da kun z-kordinated er likt.
+      <br>
+      <u>Ergo &ell; og m er parallelle men ikke sammenfallende</u>
+      <br><br><br>
+      For å sjekke om to ikke parallelle linjer treffer hverandre setter man opp et likninssystem for med 3 linjer. Eksempel for &ell; og n
+      <Latex formula="\\begin{cases}I:&1+2t=1+s\\newline II:&5+3t=6+2s\\newline III:&5+t=-2-3s\\end{cases}" />
+      Likning III gir <i>t=-7-3s</i> Vi setter inn i I og II:
+      <Latex formula="\\begin{cases}I:&1+2(-7-3s)=1+s&\\iff s=-2\\newline II:&5+3(-7-3s)=6+2s&\\iff s=-2\\end{cases}" />
+      Siden vi fikk samme verdi av s, skjærer &ell; og m hverandre. Vi setter inn -2 for &ell; eller m og finner skjæringspunktet (-1,2,4) <br>
+      <u>&ell; og m skjærer hveradnre i punktet (-1,2,4)</u>
+      <br><br>
+      Vi bruker samme metode for m og n, som gir likninssystemet:
+      <Latex formula="\\begin{cases}I:&-2t=1+s\\newline II:&5-3t=6+2s\\newline III:&3-t=-2-3s\\end{cases}" />
+      Likning III gir t=5+3s. Som vi setter inn i I og II:
+      <Latex formula="\\begin{cases}I:&-2(5+3s)=1+s &\\iff s=-11/7\\newline II:&5-3(5+3s)=6+2s &\\iff s=-16/11\\end{cases}" />
+      <u>Siden s-verdiene ikke er like, skjærer ikke m og n. Altså de er altså vindskeive.</u>
     </div>
   </FormulaCard>
 
@@ -143,5 +180,53 @@ import FormulaCard from "../FormulaCard.astro"
   <InfoCard>
     Et plan er en flate som ikke krummer i rommet. Og kan beskrives:
     <Latex formula="ax+by+cz=d" />
+    Et plan er kun definert med disse likestilte opplysningene:
+    <ul>
+      <li>tre punkter som ikke ligger på èn linje</li>
+      <li>et punkt og to ikke-parallelle vekotrer</li>
+      <li>et punkt og en normalvektor</li>
+    </ul>
   </InfoCard>
+
+  <h3>Definere et plan med punkt og normalvektor</h3>
+  <InfoCard>
+    Et plan som går gjennom punktet <Latex inline={true} formula="(x_0,y_0,z_0)" /> og normalvektoren <Latex inline={true} formula="[a,b,c]" />.
+    <Latex formula="a(x-x_0)+b(y-y_0)+c(z-z_0)=0" />
+    Som blir likningen til planet
+  </InfoCard>
+  <FormulaCard title="Hvorfor holder kun den formelen?" id="plan-formel">
+    <div slot="main">
+      Fordi <Latex inline={true} formula="a(x-x_0)+b(y-y_0)+c(z-z_0)=0" /> kan brukes ved alle tilfeller med tilstrekkelig informasjon! (3 punkt og to ikke-parallelle vektorer)
+    </div>
+    <div slot="explanation">
+      La oss ta for oss lista nedenfor for å vise at ved alle tilfellene kan vi lage likningen til planet definert av dem.
+      <ul>
+        <li>tre punkter som ikke ligger på èn linje</li>
+        <li>et punkt og to ikke-parallelle vekotrer</li>
+        <li>et punkt og en normalvektor (basisen, allerede løst)</li>
+      </ul>
+      Med «tre punkter som ikke ligger på èn linje» gjør vi følgene. Lager to forskjellige vektorer med punktene. Tar vektorproduktet av dem for å finne normalvektoren. Så har vi minst et punkt og normalvektor.
+      <br><br>
+      Med «et punkt og to ikke-parallelle vekotrer» tar vi kun vektorproduket av vektorene for å finne normalvektor. Så har vi minst et punkt og normalvektor.
+    </div>
+  </FormulaCard>
+
+  <h3>Parameterframstilling for plan</h3>
+  <InfoCard>
+    Definisjon på s.353
+  </InfoCard>
+  utredning? (s. 353)
+
+  <h3>Skjæring mellom plan (s.355)</h3>
+
+  <h3>Vinkler mellom to linjer (s.360)</h3>
+  <h3>Vinkler mellom to plan (s.362)</h3>
+  <h3>Vinkler mellom linje og plan (s.364)</h3>
+  <h3>Avstanden mellom punkt og linje(s.368)</h3>
+  <h3>Avstanden mellom to linjer(s.370)</h3>
+  <h3>Avstanden mellom punkt og plan(s.372)</h3>
+  <h3>Avstanden mellom linje og plan(s.34)</h3>
+  <h3>Avstanden mellom to plan(s.375)</h3>
+  <h3>Likning til kuleflate (s.379)</h3>
+  <h3>Parameterframstilling til kuleflate (s.386)</h3>
 </section>
