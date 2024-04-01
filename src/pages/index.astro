@@ -5,19 +5,12 @@ import Chapter2 from '../components/Chapter/Chapter2.astro';
 import Chapter3 from '../components/Chapter/Chapter3.astro';
 import Chapter4 from '../components/Chapter/Chapter4.astro';
 import Chapter5 from '../components/Chapter/Chapter5.astro';
+import Header from '../components/Header.astro';
 ---
 
 <Layout title="R2 kompendium">
 	<main id="main">
-		<h1>Formelsamling R2</h1>
-		<p>Hopp rett til kapittel</p>
-		<ul>
-			<li><a href="#kap-1">1 Følger og rekker</a></li>
-			<li><a href="#kap-2">2 Integrasjon</a></li>
-			<li><a href="#kap-3">3 Trigonometri</a></li>
-			<li><a href="#kap-4">4 Modeller</a></li>
-			<li><a href="#kap-5">5 Romgeometri</a></li>
-		</ul>
+		<Header></Header>
 		<Chapter1></Chapter1>
 		<Chapter2></Chapter2>
 		<Chapter3></Chapter3>
@@ -32,6 +25,22 @@ import Chapter5 from '../components/Chapter/Chapter5.astro';
 		max-width: calc(816px + var(--side-padding) * 2);
 		padding-inline: var(--side-padding);
 		margin: 0 auto;
+	}
+
+	h2 {
+		font-size: 4rem;
+		line-height: 100%;
+		margin-top: 4rem;
+		font-family: var(--font-heading);
+		font-weight: 600;
+	}
+	
+	h3 {
+		font-size: 2rem;
+		line-height: 120%;
+		margin-top: 1rem;
+		font-family: var(--font-heading);
+		font-weight: 600;
 	}
 
 	.card > p {

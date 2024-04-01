@@ -10,6 +10,10 @@
   --blue-100: #D7E3F4;
   --blue-200: #B2CDF1;
   --white: #fff;
+
+  --font-heading: "Inter", sans-serif;
+  --font: 'Times New Roman', Times, serif;
+
 }
 
 /* Remove default margin */
@@ -44,6 +48,7 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: hidden;
+  font-family: var(--font);
 }
 
 /* A elements that don't have a class get default styles */

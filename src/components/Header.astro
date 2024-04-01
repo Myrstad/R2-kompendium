@@ -1,0 +1,74 @@
+<p class="eyebrow">Lagd for Tronds favorittelever av Morten</p>
+<h1>R2 kompendium</h1>
+<ul class="navigation">
+  <li><a href="#kap-1">Følger og rekker</a></li>
+  <li><a href="#kap-2">Integrasjon</a></li>
+  <li><a href="#kap-3">Trigonometri</a></li>
+  <li><a href="#kap-4">Modeller</a></li>
+  <li><a href="#kap-5">Romgeometri</a></li>
+</ul>
+
+<style>
+  .eyebrow {
+		background-color: black;
+		color: white;
+		margin-top: 4rem;
+		height: 3rem;
+		border-radius: 1.5rem;
+		display: flex;
+		align-items: center;
+		width: fit-content;
+		padding: 0 2rem;
+
+		font-size: 1.25rem;
+		font-weight: 700;
+
+		font-family: var(--font-heading);
+	}
+
+	.navigation {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem 2rem;
+		padding: 0;
+		margin-top: 3rem;
+		margin-bottom: 7rem;
+	}
+
+	.navigation li {
+		list-style: none;
+	}
+	
+	.navigation a {
+		color: black;
+		height: 10rem;
+		padding: 1rem 2rem;
+		background-color: var(--blue-200);
+		border-radius: 1.5rem;
+		font-size: 1.75rem;
+		line-height: 100%;
+		display: grid;
+		place-items: center;
+		text-decoration: none;
+		text-align: center;
+		font-family: var(--font-heading);
+		font-weight: 600;
+		transition: background-color 250ms ease;
+	}
+
+	.navigation a:hover,
+	.navigation a:focus-within {
+		background-color: var(--blue-100);
+	}
+	.navigation a:active {
+		background-color: var(--blue-50);
+	}
+
+	h1 {
+		font-family: var(--font-heading);
+		font-weight: 600;
+		font-size: 6rem;
+		line-height: 100%;
+		margin-top: 1rem;
+	}
+</style>
