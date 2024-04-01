@@ -2,6 +2,8 @@
 import InfoCard from "../InfoCard.astro"
 import Latex from "../Latex.astro"
 import FormulaCard from "../FormulaCard.astro" 
+import Image from "astro/components/Image.astro"
+import crossprocuctImage from '../../assets/img/crossproduct.png'
 ---
 
 <section id="kap-5">
@@ -62,13 +64,14 @@ import FormulaCard from "../FormulaCard.astro"
   <InfoCard>
     Vektorproduktet representerer en vektor som er ortogonal med begge vektorene den er definert med sine lengder som òg tilsvarer arealet til paralellogrammet vektorene utspenner
     <Latex formula="\\vec{u}\\times\\vec{v}=[y_1z_2-z_1y_2,\\;z_1x_2-x_1z_2,\\;x_1y_2-y_1x_2]" />
-    <i>Tips sett opp skjema med x, y, z, x, y på toppen når du regner for hånd</i> <br>
+    <i>Tips sett opp skjema under med x, y, z, x, y på toppen når du regner for hånd</i> <br>
+    <Image src={crossprocuctImage} alt="hvordan sette opp skjema for å regne vektorproduktet"></Image>
     <br>Formelt er vektorproduktet definert slikt:
     <Latex formula="\\vec{u}\\times\\vec{v}=|\\vec{u}|\\cdot|\\vec{v}|\\sin(\\theta)\\;n" />
     Hvor &theta; er vinkelen mellom u og v (0&deg; til 180&deg;) og n er en normalisert vektor som er ortogonal på både u og v
     <br><br>
     Her skjønner vi også hvorfor <Latex formula="\\vec{u}\\times\\vec{v}=0\\iff\\vec{u}\\perp\\vec{v}" inline={true} />
-    som selfølgelig er fordi når sinusverdiene sin(0&deg;) og sin(180&deg;) er 0
+    som selfølgelig er fordi sin(0&deg;) og sin(180&deg;) er 0
   </InfoCard>
   <FormulaCard title="Utlede vektorproduket" id="kryssprodukt">
     <div slot="main" class="katex-left">
