@@ -213,11 +213,23 @@ import FormulaCard from "../FormulaCard.astro"
 
   <h3>Parameterframstilling for plan</h3>
   <InfoCard>
-    Definisjon på s.353
+    Et plan &alpha; går gjennom punket <Latex formula="(x_0,y_0,z_0)" inline={true} /> og er parallelt med de to ikke parallelle vektorene <Latex formula="[a_1,b_1,c_1]" inline={true} /> og <Latex formula="[a_2,b_2,c_2]" inline={true} />. Gir parameterframstillingen: 
+    <Latex formula="\\alpha:\\quad\\begin{cases}x=x_0+a_1s+a_2t \\newline y=y_0+b_1s+b_2t\\newline z=z_0+c_1s+c_2t \\end{cases}" />
   </InfoCard>
   utredning? (s. 353)
 
-  <h3>Skjæring mellom plan (s.355)</h3>
+  <h3>Skjæring mellom plan (parameterframstilling) (s.355)</h3>
+  <FormulaCard title="Skjæringslinje mellom to plan" id="param-skjaering-to-plan">
+    <div slot="main">
+      Gitt planene &alpha; og &beta;
+      <Latex formula="\\begin{align*}\\alpha:\\quad&x+y-z+1=0\\newline\\beta:\\quad&3x-3y+z+3=0\\end{align*}" />
+      Forklar hvorfor skjæringslinja &ell; skjærer &alpha; og &beta;
+      <Latex formula="\\ell:\\quad\\begin{cases}x=7\\newline y=4+4t\\newline z=5+5t\\end{cases}" />
+    </div>
+    <div slot="explanation">
+      a
+    </div>
+  </FormulaCard>
 
   <h3>Vinkler mellom to linjer (s.360)</h3>
   <h3>Vinkler mellom to plan (s.362)</h3>
