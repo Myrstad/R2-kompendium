@@ -89,7 +89,7 @@ import crossprocuctImage from '../../assets/img/crossproduct.png'
       De to nederste linjene er gjenkjennbare i «Trond metoden» hvor man ganger oppe fra venstre til nede til høyre så subtraherer det som er oppe til høyre ganger nede til venstre.
       <br>
       <br>
-      En fordel med å ikke bruke determinanten er minusen på e<sub>y</sub> som følge av at den "mangler plass" eller må ta fra både venstre og høyre kolonne av seg selv.
+      En fordel med å ikke bruke determinanten er minusen på e<sub>y</sub> som følge av at den «mangler plass»  eller må ta fra både venstre og høyre kolonne av seg selv.
       <br>
       <br>
       Derfor anbefales det sterkt av meg personlig å sette opp skjemaet.
@@ -221,22 +221,60 @@ import crossprocuctImage from '../../assets/img/crossproduct.png'
   </InfoCard>
   utredning? (s. 353)
 
-  <h3>Skjæring mellom plan (parameterframstilling) (s.355)</h3>
+  <h3>Skjæring mellom plan (parameterframstilling)</h3>
   <FormulaCard title="Skjæringslinje mellom to plan" id="param-skjaering-to-plan">
     <div slot="main">
       Gitt planene &alpha; og &beta;
       <Latex formula="\\begin{align*}\\alpha:\\quad&x+y-z+1=0\\newline\\beta:\\quad&3x-3y+z+3=0\\end{align*}" />
       Forklar hvorfor skjæringslinja &ell; skjærer &alpha; og &beta;
-      <Latex formula="\\ell:\\quad\\begin{cases}x=7\\newline y=4+4t\\newline z=5+5t\\end{cases}" />
+      <Latex formula="\\ell:\\quad\\begin{cases}x=t\\\\ y=4+4t\\\\ z=5+5t\\end{cases}" />
     </div>
     <div slot="explanation">
-      a
+      Vi starter med å finne et felles punkt for planene &alpha; og &beta; siden det blir et kjent punkt for skjæringslinja. 
+      Vi bruker x = 0 for å finne y og z kordinatene som oppfyller planlikningene.
+      <Latex formula="\\begin{cases}\\alpha:&y-z+1=0\\\\\\beta:&-2y+z+3=0\\end{cases}" />
+      Vi adderer likningene og får <Latex formula="-y+4=0\\implies y=4" inline={true} /> og setter y=4 i første likning
+      <Latex formula="1(4)-z+1=0\\implies z=5" inline={true} />. <br> 
+      <u>Dette gir punktet (0, 4, 5)</u><br><br>
+      Normalvektorene til planene er <Latex formula="n_\\alpha=[1,1-1]\\lor n_\\beta=[3,-2,1]" inline={true} />
+      <Latex formula="n_\\alpha\\times n_\\beta=[-1,-4,-5]=-1\\cdot[1,4,5]" />
+      Vi har da et kjent punkt på skjæringslinja (0, 4, 5) og en vektor [1,4,5] som står normalt på begge planene (må være parallell med skjæringslinja). <u>Det er nok til å definere en parameterframstilling.</u>
     </div>
   </FormulaCard>
 
-  <h3>Vinkler mellom to linjer (s.360)</h3>
-  <h3>Vinkler mellom to plan (s.362)</h3>
-  <h3>Vinkler mellom linje og plan (s.364)</h3>
+  <h3>Vinkler mellom to linjer</h3>
+  <InfoCard>
+    Vinkelen v mellom to linjer skal ligge i intervallet [0&deg;, 90&deg;] <br>
+    La vinkelen u være <b>vinklen mellom retningsvektorene</b>. Det betyr
+    <Latex formula="\\begin{align*}&v=u\\text{ hvis }0\\degree\\le u\\le90\\degree\\\\&v=180\\degree-u\\text{ hvis }90\\degree\\le u\\le180\\degree \\end{align*}" />
+  </InfoCard>
+
+  <h3>Vinkler mellom to plan</h3>
+  <InfoCard>
+    Vinkelen v mellom to plan skal ligge i intervallet [0&deg;, 90&deg;] <br>
+    La vinkelen u være <b>vinklen mellom normalvektorene</b> for planene. Det betyr
+    <Latex formula="\\begin{align*}&v=u\\text{ hvis }0\\degree\\le u\\le90\\degree\\\\&v=180\\degree-u\\text{ hvis }90\\degree\\le u\\le180\\degree \\end{align*}" />
+  </InfoCard>
+
+  <h3>Vinkler mellom linje og plan</h3>
+  <InfoCard>
+    Vinkelen v mellom en linje og et plan skal ligge i intervallet [0&deg;, 90&deg;] <br>
+    La vinkelen u være <b>vinklen mellom en retningsvektor (linje) og normalvektor (planet)</b>. Det betyr
+    <Latex formula="\\begin{align*}&v=90\\degree-u\\text{ hvis }0\\degree\\le u\\le90\\degree\\\\&v=u-90\\degree\\text{ hvis }90\\degree\\le u\\le180\\degree \\end{align*}" />
+  </InfoCard>
+  <h3>Avstander</h3>
+  <InfoCard>
+    <b>Avstand linje - punkt</b> <br>
+    La <Latex formula="\\vec{r}" inline={true} /> være retningsvektoren til en linje gjennom P. <br>
+    Avstanden blir D mellom et punkt Q og linja (gitt ved P og r)
+    <Latex formula="D=\\frac{|\\vec{PQ}\\times\\vec{r}|}{|\\vec{r}|}" />
+    <br><br>
+    <b>Avstand plan - punkt</b><br>
+    Et plan med ax + by + cz + d = 0. <br>
+    Gir avstanden D mellom punket <Latex formula="(x_1,y_1,z_1)" inline={true} /> og planet:
+    <Latex formula="D=\\frac{|ax_1+by_z+cz_1+d|}{\\sqrt{a^2+b^2+c^2}}" />
+  </InfoCard>
+
   <h3>Avstanden mellom punkt og linje(s.368)</h3>
   <h3>Avstanden mellom to linjer(s.370)</h3>
   <h3>Avstanden mellom punkt og plan(s.372)</h3>

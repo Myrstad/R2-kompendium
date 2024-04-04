@@ -29,7 +29,7 @@ import FormulaCard from "../FormulaCard.astro"
   </InfoCard>
 
   <h3>Trapesmetoden</h3>
-  Ligner midtpunkttilnærming, bare du tar gjennomsnittet av venstre og høyre side per delta x.
+  Ligner midtpunkttilnærming, bare du tar gjennomsnittet av venstre og høyre side per &Delta;x.
   <FormulaCard title="Forklaring trapesmetoden" id="trapesmetoden">
     <div slot="main">
       <Latex formula="\\int_{a}^{b} f(x)\\;dx\\approx\\frac{\\Delta x}{2}\\Bigg(f(a)+f(b)+2\\cdot \\sum_{i=1}^{n-1}f(x_i)\\Bigg)" />
@@ -73,7 +73,7 @@ import FormulaCard from "../FormulaCard.astro"
       <Latex formula="s=\\int_{a}^{b}\\sqrt{1+(f'(x))^2}\\;dx" />
     </div>
     <div slot="explanation">
-      Ved å summere sammen alle hypotenusene til katetene (delta x) og forskjell i y får vi buelengde. <br>
+      Ved å summere sammen alle hypotenusene til katetene (&Delta;x) og forskjell i y får vi buelengde. <br>
       For å finne formelen må vi starte med å finne en liten buelengde:
       <Latex formula="\\Delta s_i=\\sqrt{(\\Delta x)^2+(\\Delta f(x_i))^2}" />
       <Latex formula="\\Delta s_i=\\sqrt{\\Delta x^2\\bigg(1+\\Big(\\frac{\\Delta f(x_i)}{\\Delta x}\\Big)^2\\bigg)}" />

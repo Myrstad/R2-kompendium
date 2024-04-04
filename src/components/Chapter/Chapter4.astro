@@ -2,6 +2,10 @@
 import InfoCard from "../InfoCard.astro"
 import Latex from "../Latex.astro"
 import FormulaCard from "../FormulaCard.astro" 
+import { Code } from "astro:components"
+
+import eulerExampleImage from '../../assets/img/eksempel-utstrift-euler.webp'
+import { Image } from "astro:assets"
 ---
 
 <section id="kap-4">
@@ -10,4 +14,47 @@ import FormulaCard from "../FormulaCard.astro"
   <h3>Analyse av modeller</h3>
   <h3>Veksmodeller</h3>
   <h3>Eulermetoden&hearts;</h3>
+  <InfoCard>
+    <b>Beskrivelse/ formell definisjon</b> <br>
+    Gitt to første ordens differensialligning f og g
+    <Latex formula="\\begin{cases}\\frac{dx}{dt}=f(x,y,t)\\newline\\frac{dy}{dt}=g(x,y,t)\\end{cases}" />
+    som beskriver en kurve <Latex formula="[x(t),y(t)]" inline={true} />. Eulers metode består i å velge en initialverdi, 
+    <Latex formula="(x_0,y_0)" inline={true} /> og en steglengde h. <br>
+    Så beregnes videre det en følge av punkter
+    <Latex formula="x_{n+1},y_{n+1}=\\big(x_n+hf(x_n,y_n,t_n),y_n+hg(x_n,y_n,t_n)\\big)" />
+    Hvor <Latex formula="t_n=nh" inline={true} />. Denne punktfølgen beskriver en approksimasjon av kurven
+    <Latex formula="[(x(t),y(t))]" inline={true} /> med initialbetingesle <Latex formula="[(x(0),y(0))]=(x_0,y_0)" inline={true} />
+  </InfoCard>
+  <InfoCard>
+    <p><b>Eksempel programmering (Python) </b></p>
+    <Code code=`
+from pylab import *
+
+a = 0
+b = 50
+n = 10000
+delta_t = (b - a)/n
+N0 = 6500
+
+def N_derivert(N):
+    return -0.007*N - 25
+
+t = zeros(n)
+N = zeros(n)
+
+t[0] = a
+N[0] = N0
+
+for i in range(n - 1):
+    N[i+1] = N[i] + N_derivert(N[i]) * delta_t
+    t[i+1] = t[i] + delta_t
+
+plot(t, N)
+xlabel("Tid (år)")
+ylabel("Innbyggertall")
+show()
+    ` lang={"py"} wrap={false} />
+    Gir utskriften:
+    <Image src={eulerExampleImage} alt="" />
+  </InfoCard>
 </section>
