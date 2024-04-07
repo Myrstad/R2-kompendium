@@ -52,31 +52,78 @@ import FormulaCard from "../FormulaCard.astro"
     <Latex formula="sin [90,60,45,30,0]=[\\frac{\\sqrt{4}}{2},\\frac{\\sqrt{3}}{2},\\frac{\\sqrt{2}}{2},\\frac{\\sqrt{1}}{2},\\frac{\\sqrt{0}}{2}]" inline={true}/>
   </InfoCard>
 
-  <h3>Trigonometriske grunnlikninger (s.208)</h3>
+  <h3>Trigonometriske identitet: enhetsformelen</h3>
   <InfoCard>
-    
+    <Latex formula="\\cos^2v+\\sin^2v=1" />
   </InfoCard>
   
-  <h3>Sum og differense vinkler (s.212)</h3>
+  <h3>Sum og differense vinkler (i trig. funksjoner)</h3>
   <InfoCard>
-    
+    <Latex formula="\\sin(u\\pm v)=\\sin u\\cdot\\cos v\\pm\\cos u\\cdot\\sin v" />
+    <Latex formula="\\cos(u\\pm v)=\\cos u\\cdot\\cos v\\mp\\sin u\\cdot\\sin v" />
+    <Latex formula="\\tan(u\\pm v)=\\frac{\\tan u\\pm\\tan v}{1\\mp\\tan u\\cdot\\tan v}" />
   </InfoCard>
 
-  <h3>Doble vinkler (s.213)</h3>
+  <h3>Doble vinkler (i trig. funksjoner)</h3>
   <InfoCard>
-
+    <b>For sinus:</b>
+    <Latex formula="\\sin2v=2\\sin v\\cdot\\cos v" />
+    <b>For cosinus:</b>
+    <Latex formula="\\begin{align*}\\cos2v&=\\cos^2v-\\sin^2v\\\\&=1-2\\sin^2v\\\\&=2\\cos^2v-1 \\end{align*}" />
+    <b>For tangens:</b>
+    <Latex formula="\\tan2v=\\frac{2\\tan v}{1-\\tan^2v}" />
   </InfoCard>
 
-  <h3>Harmoniske svingninger (s.224)</h3>
+  <h3>Harmoniske svingninger</h3>
   <InfoCard>
-
+    <Latex formula="f(x)=A\\sin(cx+\\varphi)+d" />
+    <p><b>Sinusargumentet cx+&phi;</b></p>
+    <p>Vi antar at c og &phi; er positive</p>
+    <p><b>d</b></p>
+    <p>likevektslinja (y=d) ligger midt i mellom topp og bunnpunktet til sinusfunksjonen.</p>
+    <p>Vi har derfor y=d, der <Latex formula="d=\\frac{y_{maks}+y_{min}}{2}" inline={true} /></p>
+    <p><b>A</b></p>
+    <p>Ampliduten (A) er avstanden fra topppunktet (eller bunnpunktet) til likevektslinja y = d. Kalles også <i>maksimalt utslag</i></p>
+    <p>Derfor er <Latex formula="A=\\frac{y_{maks}-y_{min}}{2}" inline={true} /></p>
+    <p><b>c</b></p>
+    <p>Perioden p til en harmonisk svingning er avstanden mellom to punkter der grafen gjentar seg selv. Eksempel to topp- eller bunnpunkter.</p>
+    <p>Når x = 0, er sinusargumentet &phi;</p>
+    <p>Etter én periode er sinusargumentet lik &phi;+2&pi;. Da skal x ha verdien p.</p>
+    <p>Det gir <Latex formula="cp+\\varphi=\\varphi+2\\pi\\Leftrightarrow c=\\frac{2\\pi}{p}" inline={true} /></p>
+    <p><b>&phi;</b></p>
+    <p>Representerer hvor mye sinusfunksjonen er forskjøvet fordi sin(x) når x er 0 gir 0. Mens sin(x+&phi;) når x er 0 og &phi; er &pi;/2 gir verdien 1 da er grafen altså forskjøvet med 90&deg;</p>
+    <br>
+    <p><u>Alternativ forklaring</u> er at etter likevektslinja antar vi at sinusfunksjonen stiger oppover i x<sub>0</sub> = 0. Da er y = d, så sinusargumentet kan være lik null.</p>
+    <p>Det gir <Latex formula="cx_0+\\varphi=0\\Leftrightarrow c=\\frac{2\\pi}{p}\\Leftrightarrow\\varphi=-x_0c" inline={true} /></p>
+    <p>Derfor er grafen til A sin (cx + &phi;) + d forskjøvet x<sub>0</sub> langs likevektslinja sammenlignet med A sin (cx) + d.</p>
+    <p>Grafen er forskjøvet mot høyre når &phi;&lt;0 og x<sub>0</sub> er positiv. Helt motsatt når grafen er forskjøvet mot venstre. (&phi;&gt;0 og x<sub>0</sub> er negativ)</p>
+  </InfoCard>
+  <InfoCard>
+    <p>Sinusfunksjonen f gitt ved f(x)=Asin(cx+&phi;) gir den samme grafen som cosinusfuksjonen g</p>
+    <p><Latex formula="g(x)=A\\cos(cx+\\theta)+d\\text{, der }\\theta=\\varphi-\\frac{\\pi}{2}"inline={false}/></p>
+    <p><i>(fordi sinusfunksjonen forskjøvet ved 90&deg; overlapper med cosinusfuksjonen)</i></p>
   </InfoCard>
 
-  <h3>Gjøre om til Sinus (s.231)[kanskje under harmoniske svingninger]</h3>
+  <h3>Gjøre om til Sinus</h3>
   <InfoCard>
-
+    <Latex formula="a\\sin cx+b\\cos cx=A(cx+\\varphi)" />
+    <Latex formula="\\text{der }A=\\sqrt{a^2+b^2}\\text{ og }\\tan\\varphi=\\frac{a}{b}" />
+    <Latex formula="\\varphi\\text{ ligger i samme kvadrant som punket }(a,b)." />
   </InfoCard>
 
-  <h3>Kap 3F derivasjon/integrasjon sin\cos\tan</h3>
+  <h3>Derivasjon av trigonometriske funksjoner</h3>
+  <InfoCard>
+    <Latex formula="f(x)=\\sin x \\implies f'(x)=\\cos x" />
+    <Latex formula="f(x)=\\cos x \\implies f'(x)=-\\sin x" />
+    <Latex formula="f(x)=\\tan x \\implies f'(x)=\\frac{1}{\\cos^2x}=1+\\tan^2x" />
+  </InfoCard>
+  (s.236 kjerneregel ved konstant inni trig.funksjon)
+
+  <h3>Integrasjon av trigonometriske funksjoner</h3>
+  <InfoCard>
+    <Latex formula="\\int\\sin x\\;dx=-\\cos x + C" />
+    <Latex formula="\\int\\cos x\\;dx=\\sin x + C" />
+  </InfoCard>
+  (s.241 kjerneregel ved konstant inni trig.funksjon)
 
 </section>
