@@ -52,7 +52,7 @@ import SupportMe from '../components/SupportMe.astro';
 	.card img {
 		width: 100%;
 		height: auto;
-		border-radius: 1rem;
+		border-radius: 0.5em;
 	}
 
 	.two-col {
@@ -67,10 +67,27 @@ import SupportMe from '../components/SupportMe.astro';
 		overflow-x: auto;
 	}
 	
-	@media screen and (max-width: 700px) {
+	@media screen and (max-width: 800px) {
 		.two-col {
 			grid-template-columns: 1fr;
 			gap: 0;
+		}
+
+		h2 {
+			font-size: calc(4rem * 4 / 6);
+		}
+
+		h3 {
+			font-size: calc(2rem * 4 / 6);
+		}
+	}
+	@media screen and (max-width: 600px) {
+		h2 {
+			font-size: 2rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
 		}
 	}
 </style>

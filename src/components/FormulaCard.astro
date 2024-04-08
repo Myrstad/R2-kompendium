@@ -119,4 +119,10 @@ const {title = "Bevis for ...", id= " Eksempel 1"} = Astro.props
   .input:checked ~ .content {
     display: block;
   }
+
+  @media screen and (max-width: 600px) {
+      .card {
+        font-size: 1rem;
+      }
+    }
 </style>
